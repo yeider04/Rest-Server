@@ -1,6 +1,8 @@
 import express from "express";
+import colors from "colors";
 import cors from "cors";
 import userRoutes from "../routes/usuarios.js";
+import { dbConnection } from "../database/config.js";
 
 class Server {
   constructor() {
@@ -9,11 +11,18 @@ class Server {
     this.PORT = process.env.PORT;
     this.usuariosPath = "/api/usuarios";
 
+    // Conectar base de datos
+    this.conectarDB();
+
     // Middlewares
     this.middlewares();
 
     // Rutas de mi aplicacion
     this.routes();
+  }
+
+  async conectarDB(){
+    await dbConnection();
   }
 
   middlewares() {
@@ -33,7 +42,7 @@ class Server {
 
   listen() {
     this.app.listen(this.PORT, () => {
-      console.log("Servidor ejecutandose en:", this.PORT);
+      console.log("Servidor ejecutandose en puerto:", this.PORT.blue);
     });
   }
 }
