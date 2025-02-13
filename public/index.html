@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso denegado</title>
-</head>
-<body>
-    <h1>Acceso denegado</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rest Server</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <!-- Botón Ver en GitHub arriba a la derecha -->
+      <div class="d-flex justify-content-end">
+        <a
+          href="https://github.com/yeider04/Rest-Server"
+          target="_blank"
+          class="btn btn-dark"
+        >
+          Ver en GitHub
+        </a>
+      </div>
+
+      <!-- Contenido principal centrado -->
+      <div class="text-center mt-5">
+        <h1 class="title fw-bold">Rest Server</h1>
+        <hr class="divider mx-auto w-50 mb-4" />
+        <p class="description">
+          REST Server con Node.js, Express y MongoDB. <br />
+          Incluye autenticación y manejo de archivos.
+        </p>
+
+        <!-- Botón Iniciar sesión con Google centrado -->
+        <div
+          id="g_id_onload"
+          data-client_id="838808795416-cj595ajbn2vceingq7p88f55cn0ns7fn.apps.googleusercontent.com"
+          data-auto_prompt="false"
+          data-callback="handleCredentialResponse"
+        ></div>
+        <div
+          class="g_id_signin d-flex justify-content-center mb-3"
+          data-type="standard"
+          data-size="large"
+          data-theme="outline"
+          data-text="sign_in_with"
+          data-shape="rectangular"
+          data-logo_alignment="left"
+        ></div>
+
+        <!-- Botón Signout debajo del de Google -->
+        <button id="google_signout" class="btn btn-primary">Signout</button>
+      </div>
+    </div>
+
+    <!-- Google API -->
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Archivo JS -->
+    <script src="scripts/main.js"></script>
+  </body>
 </html>
+
