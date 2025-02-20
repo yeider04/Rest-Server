@@ -1,8 +1,9 @@
 import express from "express";
 import colors from "colors";
 import cors from "cors";
-import userRoutes from "../routes/usuarios.js";
-import authRoutes from "../routes/auth.js"
+
+import { userRoutes, authRoutes, categoriasRoutes, productosRoutes, buscarRoutes } from "../routes/index.js";
+
 import { dbConnection } from "../database/config.js";
 
 class Server {
@@ -10,8 +11,13 @@ class Server {
     
     this.app = express();
     this.PORT = process.env.PORT;
-    this.authPath = "/api/auth";
-    this.usuariosPath = "/api/usuarios";
+    this.paths = {
+      auth:       "/api/auth",
+      buscar:     "/api/buscar",
+      categorias: "/api/categorias",
+      productos:  "/api/productos",
+      usuarios:   "/api/usuarios"
+    }
 
     // Conectar base de datos
     this.conectarDB();
@@ -39,8 +45,11 @@ class Server {
   }
 
   routes() {
-    this.app.use(this.authPath, authRoutes);
-    this.app.use(this.usuariosPath, userRoutes);
+    this.app.use(this.paths.auth, authRoutes);
+    this.app.use(this.paths.buscar, buscarRoutes);
+    this.app.use(this.paths.categorias, categoriasRoutes);
+    this.app.use(this.paths.productos, productosRoutes);
+    this.app.use(this.paths.usuarios, userRoutes);
   }
 
   listen() {
