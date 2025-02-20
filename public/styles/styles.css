@@ -1,17 +1,35 @@
 body {
   font-family: "Poppins", sans-serif;
-}
-
-.title {
-  color: #2d3748;
+  background-color: #D1D1D1;
 }
 
 .divider {
   border: 0;
   height: 2px;
-  background: #cbd5e0;
+  background: #899089;
 }
 
 .description {
-  color: #4a5568;
+  color: #121212;
+}
+
+/* Estilo para el h1 */
+.title {
+  color: #040404;
+}
+
+/* Estilo para el botón de Signout */
+#google_signout {
+  background-color: #E0FF4F;
+  border-color: #E0FF4F;
+  color: #040404; /* Texto en negro para mejor contraste */
+}
+
+#google_signout:hover {
+  background-color: #c3e23c; /* Un tono más oscuro al pasar el mouse */
+  border-color: #c3e23c;
+}
+
+#btn-git {
+  background-color: #0025C5;
 }
